@@ -5,7 +5,7 @@ var MongoDb = function () {
     
     var mongoClient = require('mongodb').MongoClient
         , assert = require('assert')
-        , url = 'mongodb://localhost:27017/test';
+        , url = 'mongodb://KevinUserDB:creativecalo10@ds151028.mlab.com:51028/testmongodb';
     
     return {
         

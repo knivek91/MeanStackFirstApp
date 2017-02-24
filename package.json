@@ -8,6 +8,7 @@
     "morgan": "^1.7.0"
   },
   "devDependencies": {
+    "body-parser": "^1.15.2",
     "guid": "0.0.12",
     "mongodb": "^2.2.16",
     "promise": "^7.1.1"
