@@ -1,0 +1,1 @@
+var Person = require('./schemas/person.schema.js');
