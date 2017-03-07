@@ -1,11 +1,13 @@
 var guid = require('guid');
 var Promise = require('promise');
+var moongose = require('moongose');
 
 var MongoDb = function () {
     
-    var mongoClient = require('mongodb').MongoClient
-        , assert = require('assert')
-        , url = 'mongodb://KevinUserDB:creativecalo10@ds151028.mlab.com:51028/testmongodb';
+    var url = 'mongodb://KevinUserDB:creativecalo10@ds151028.mlab.com:51028/testmongodb';
+    
+    // connect with mongo using moongose;
+    //moongose.connect(url);
     
     return {
         
