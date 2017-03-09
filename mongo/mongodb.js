@@ -1,5 +1,3 @@
-var guid = require('guid');
-var Promise = require('promise');
 var moongose = require('moongose');
 
 var MongoDb = function () {
@@ -7,18 +5,15 @@ var MongoDb = function () {
     var url = 'mongodb://KevinUserDB:creativecalo10@ds151028.mlab.com:51028/testmongodb';
     
     // connect with mongo using moongose;
-    //moongose.connect(url);
+    moongose.connect(url);
     
     return {
         
-        insertDoc: function (data) {
-            mongoClient.connect(url, function (err, db) {
-                var collection = db.collection('documents');
-                data['guid'] = guid.raw();
-                collection.insert(data);
-                db.close();
-                return '';
+        saveDoc: function (document) {
+            document.save(function (err) {
+                
             });
+            return '';
         }
         , readDocs: function() {
             return new Promise(function(resolve, reject) {
@@ -35,6 +30,11 @@ var MongoDb = function () {
                     }
                 })
             });
+        }
+        , errorHandler: function errorHandler(err, data) {
+            if(err)
+                throw err;
+            return data;
         }
     };
 };
